@@ -23,6 +23,7 @@
 		7C1F769016AF7C5E0094A3F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F766B16AF7C5E0094A3F6 /* Foundation.framework */; };
 		7C1F769816AF7C5E0094A3F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C1F769616AF7C5E0094A3F6 /* InfoPlist.strings */; };
 		7C1F769B16AF7C5E0094A3F6 /* Custom_Push_Notification_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F769A16AF7C5E0094A3F6 /* Custom_Push_Notification_TestTests.m */; };
+		F13F1D91F43544329E5A1453 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE78C7B3AA4956AD93DAFC /* libPods.a */; settings = {}; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66CE78C7B3AA4956AD93DAFC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1F766516AF7C5E0094A3F6 /* Custom Push Notification Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Push Notification Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1F766916AF7C5E0094A3F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C1F766B16AF7C5E0094A3F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +60,7 @@
 		7C1F769716AF7C5E0094A3F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C1F769916AF7C5E0094A3F6 /* Custom_Push_Notification_TestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Custom_Push_Notification_TestTests.h; sourceTree = "<group>"; };
 		7C1F769A16AF7C5E0094A3F6 /* Custom_Push_Notification_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Custom_Push_Notification_TestTests.m; sourceTree = "<group>"; };
+		87DE89A909A64F16A6A7A474 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				7C1F766A16AF7C5E0094A3F6 /* UIKit.framework in Frameworks */,
 				7C1F766C16AF7C5E0094A3F6 /* Foundation.framework in Frameworks */,
 				7C1F766E16AF7C5E0094A3F6 /* CoreGraphics.framework in Frameworks */,
+				F13F1D91F43544329E5A1453 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 				7C1F769316AF7C5E0094A3F6 /* Custom Push Notification TestTests */,
 				7C1F766816AF7C5E0094A3F6 /* Frameworks */,
 				7C1F766616AF7C5E0094A3F6 /* Products */,
+				87DE89A909A64F16A6A7A474 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +115,7 @@
 				7C1F766B16AF7C5E0094A3F6 /* Foundation.framework */,
 				7C1F766D16AF7C5E0094A3F6 /* CoreGraphics.framework */,
 				7C1F768D16AF7C5E0094A3F6 /* SenTestingKit.framework */,
+				66CE78C7B3AA4956AD93DAFC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 				7C1F766116AF7C5E0094A3F6 /* Sources */,
 				7C1F766216AF7C5E0094A3F6 /* Frameworks */,
 				7C1F766316AF7C5E0094A3F6 /* Resources */,
+				D0D13453A5394461B163E97F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,6 +226,8 @@
 			mainGroup = 7C1F765A16AF7C5E0094A3F6;
 			productRefGroup = 7C1F766616AF7C5E0094A3F6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				7C1F766416AF7C5E0094A3F6 /* Custom Push Notification Test */,
@@ -263,6 +272,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		D0D13453A5394461B163E97F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -375,6 +399,7 @@
 		};
 		7C1F769F16AF7C5E0094A3F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DE89A909A64F16A6A7A474 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Custom Push Notification Test/Custom Push Notification Test-Prefix.pch";
@@ -386,6 +411,7 @@
 		};
 		7C1F76A016AF7C5E0094A3F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DE89A909A64F16A6A7A474 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Custom Push Notification Test/Custom Push Notification Test-Prefix.pch";

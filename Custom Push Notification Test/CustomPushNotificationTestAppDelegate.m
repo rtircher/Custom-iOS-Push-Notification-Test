@@ -7,6 +7,7 @@
 //
 
 #import "CustomPushNotificationTestAppDelegate.h"
+#import "AFNetworking.h"
 
 @implementation CustomPushNotificationTestAppDelegate
 
@@ -24,13 +25,32 @@
 }
 
 - (void)registerDeviceID:(NSData *)deviceToken forUserID:(NSInteger)userId {
+    NSLog(@"Registering Device");
+    NSString *stringToken = [self convertDeviceTokenToStringFrom:deviceToken];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: stringToken, @"token", nil];
 
- }
+    NSString *url = @"http://10.0.1.5:4567/";
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:url]];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/users/123/registerDevice" parameters:params];
+
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *theOperation, id responseObject) {
+        NSLog(@"AFRequest is a success");
+    } failure:^(AFHTTPRequestOperation *theOperation, NSError *error) {
+        NSLog(@"AFRequest is a failure");
+    }];
+
+    [operation start];
+}
 
 -(NSString *)convertDeviceTokenToStringFrom:(NSData *)deviceToken {
     const unsigned char *buffer = (const unsigned char *)[deviceToken bytes];
     if (!buffer) {
-        return;
+        return nil;
     }
     NSMutableString *hex = [NSMutableString stringWithCapacity:(deviceToken.length * 2)];
     for (NSUInteger i = 0; i < deviceToken.length; i++) {
