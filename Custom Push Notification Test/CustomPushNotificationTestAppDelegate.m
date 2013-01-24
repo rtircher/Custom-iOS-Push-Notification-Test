@@ -29,9 +29,9 @@
     NSString *stringToken = [self convertDeviceTokenToStringFrom:deviceToken];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: stringToken, @"token", nil];
 
-    NSString *url = @"http://10.0.1.5:4567/";
+    NSString *url = @"http://192.168.163.148:4567/";
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:url]];
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/users/123/registerDevice" parameters:params];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/users/123/devices" parameters:params];
 
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 
